@@ -8,18 +8,20 @@ const Sections = ({ data }) => {
             <div className="meals">
               {elem.meals.map((info, index) => {
                 return (
-                  <>
+                  <div className="mealsTextImg">
                     <div className="mealsText">
                       <h4 key={index}>{info.title}</h4>
                       <p key={index}>{info.description}</p>
-                      <p key={index}>{info.price} €</p>
+                      <p className="price" key={index}>
+                        {info.price} €
+                      </p>
                     </div>
                     <img
                       className="mealsImg"
                       key={index}
                       src={info.picture}
                     ></img>
-                  </>
+                  </div>
                 );
               })}
             </div>

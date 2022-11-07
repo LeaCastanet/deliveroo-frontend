@@ -62,13 +62,53 @@ h2 {
 .section {
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 h3 {
   font-weight: bold;
   font-size: 24px;
+  margin: 30px 10px;
+}
+
+.meals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mealsTextImg {
+  display: flex;
+  flex: 45%;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+h4 {
+  color: black;
+  font-size: 18px;
+  line-height: 15px;
+  margin-bottom: 10px;
 }
 
 .mealsText {
+  color: #969a9a;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.price {
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.mealsImg {
+  height: 130px;
+  width: 130px;
+  border-radius: 5px;
   background-color: white;
+  object-fit: cover;
 }
