@@ -8,8 +8,9 @@ const Description = ({ data }) => {
           <h2>{data.restaurant.name}</h2>
           <p>{data.restaurant.description}</p>
         </div>
-
-        <img src={imgDescription} className="imgDescription"></img>
+        <div className="imgDescription">
+          <img src={imgDescription} className="imgDescription"></img>
+        </div>
       </div>
     </div>
   );

@@ -56,13 +56,23 @@ h2 {
   flex: 1;
   width: 350px;
   border-radius: 5px;
-  overflow: hidden;
+  object-fit: cover;
+}
+
+.basketEtSections {
+  display: flex;
+}
+
+.basket {
+  background-color: aqua;
+  flex: 1;
 }
 
 .section {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 20px;
+  flex: 3;
 }
 
 h3 {
@@ -74,17 +84,19 @@ h3 {
 .meals {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .mealsTextImg {
   display: flex;
-  flex: 45%;
-  margin: 10px;
+  width: 46%;
+  margin: 7px 0px;
   background-color: white;
   border-radius: 5px;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  height: 160px;
 }
 
 h4 {
@@ -111,4 +123,44 @@ h4 {
   border-radius: 5px;
   background-color: white;
   object-fit: cover;
+}
+
+@media (max-width: 1250px) {
+  .mealsTextImg {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: 1200px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .descriptionText {
+    color: #969a9a;
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+  }
+
+  .imgDescription {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
 }

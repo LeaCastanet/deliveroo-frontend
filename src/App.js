@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./components/Header";
 import Description from "./components/Description";
 import Sections from "./components/Sections";
+import Basket from "./components/Basket";
 
 const App = () => {
   const [data, setData] = useState({});
@@ -25,7 +26,10 @@ const App = () => {
       <Header />
       <div className="container">
         <Description data={data} />
-        <Sections data={data} />
+        <div className="basketEtSections">
+          <Sections data={data} />
+          <Basket />
+        </div>
       </div>
     </>
   );
