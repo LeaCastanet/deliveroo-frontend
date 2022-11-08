@@ -9,6 +9,7 @@ import Basket from "./components/Basket";
 const App = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [basket, setBasket] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +28,7 @@ const App = () => {
       <div className="container">
         <Description data={data} />
         <div className="basketEtSections">
-          <Sections data={data} />
+          <Sections data={data} basket={basket} setBasket={setBasket} />
           <Basket />
         </div>
       </div>

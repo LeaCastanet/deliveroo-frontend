@@ -1,46 +1,68 @@
-const Sections = ({ data }) => {
+const Sections = ({ data, basket, setBasket }) => {
+  // const addBasketItem = () => {
+  //   const newBasket = [...basket];
+  //   newBasket.push(info.title, info.price);
+  //   setBasket(newBasket);
+  // };
+
   return (
     <div className="section">
       {data.categories.map((elem, index) => {
-        return (
-          <div className="sectionName">
-            <h3 key={index}>{elem.name}</h3>
-            <div className="meals">
-              {elem.meals.map((info, index) => {
-                if (info.picture) {
+        if (elem.meals.length !== 0) {
+          return (
+            <div className="sectionName">
+              <h3 key={index}>{elem.name}</h3>
+              <div className="meals">
+                {elem.meals.map((info) => {
                   return (
                     <div className="mealsTextImg">
-                      <div className="mealsText">
-                        <h4 key={index}>{info.title}</h4>
-                        <p key={index}>{info.description}</p>
-                        <p className="price" key={index}>
+                      <div
+                        className="mealsText"
+                        onClick={() => {
+                          const addBasketItem = () => {
+                            const newBasket = [...basket];
+                            newBasket.push(info);
+                            setBasket(newBasket);
+                            // {
+                            //   newBasket.map((achat) => {
+                            //     return (
+                            //       <div>
+                            //         <p>{achat.tile}</p>
+                            //         <p>{achat.price}</p>
+                            //       </div>
+                            //     );
+                            //   });
+                            // }
+
+                            console.log(info.title);
+                            console.log(info.price);
+                          };
+                        }}
+                      >
+                        <h4 key={info.id}>{info.title}</h4>
+                        <p className="textCaché" key={info.id}>
+                          {info.description}
+                        </p>
+                        <p className="price" key={info.id}>
                           {info.price} €
                         </p>
                       </div>
-                      <img
-                        className="mealsImg"
-                        key={index}
-                        src={info.picture}
-                      ></img>
+                      {info.picture ? (
+                        <img
+                          className="mealsImg"
+                          key={info.id}
+                          src={info.picture}
+                        ></img>
+                      ) : null}
                     </div>
                   );
-                } else {
-                  return (
-                    <div className="mealsTextImg">
-                      <div className="mealsText">
-                        <h4 key={index}>{info.title}</h4>
-                        <p key={index}>{info.description}</p>
-                        <p className="price" key={index}>
-                          {info.price} €
-                        </p>
-                      </div>
-                    </div>
-                  );
-                }
-              })}
+                })}
+              </div>
             </div>
-          </div>
-        );
+          );
+        } else {
+          return null;
+        }
       })}
     </div>
   );
