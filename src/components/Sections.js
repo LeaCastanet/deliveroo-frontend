@@ -1,9 +1,13 @@
 const Sections = ({ data, basket, setBasket }) => {
-  // const addBasketItem = () => {
-  //   const newBasket = [...basket];
-  //   newBasket.push(info.title, info.price);
-  //   setBasket(newBasket);
-  // };
+  const addBasketItem = (info) => {
+    const newBasket = [...basket];
+    newBasket.push(
+      { title: info.title },
+      { price: info.price },
+      { id: info.id }
+    );
+    setBasket(newBasket);
+  };
 
   return (
     <div className="section">
@@ -19,24 +23,7 @@ const Sections = ({ data, basket, setBasket }) => {
                       <div
                         className="mealsText"
                         onClick={() => {
-                          const addBasketItem = () => {
-                            const newBasket = [...basket];
-                            newBasket.push(info);
-                            setBasket(newBasket);
-                            // {
-                            //   newBasket.map((achat) => {
-                            //     return (
-                            //       <div>
-                            //         <p>{achat.tile}</p>
-                            //         <p>{achat.price}</p>
-                            //       </div>
-                            //     );
-                            //   });
-                            // }
-
-                            console.log(info.title);
-                            console.log(info.price);
-                          };
+                          addBasketItem(info);
                         }}
                       >
                         <h4 key={info.id}>{info.title}</h4>
@@ -53,7 +40,7 @@ const Sections = ({ data, basket, setBasket }) => {
                           key={info.id}
                           src={info.picture}
                         ></img>
-                      ) : null}
+                      ) : null}{" "}
                     </div>
                   );
                 })}
