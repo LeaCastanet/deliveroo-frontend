@@ -29,7 +29,7 @@ const App = () => {
         <Description data={data} />
         <div className="basketEtSections">
           <Sections data={data} basket={basket} setBasket={setBasket} />
-          <Basket basket={basket} />
+          <Basket basket={basket} setBasket={setBasket} />
         </div>
       </div>
     </>

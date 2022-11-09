@@ -1,11 +1,17 @@
 const Sections = ({ data, basket, setBasket }) => {
   const addBasketItem = (info) => {
     const newBasket = [...basket];
-    newBasket.push(
-      { title: info.title },
-      { price: info.price },
-      { id: info.id }
-    );
+    const infoPresent = basket.find((elem) => elem.id === info.id);
+    if (infoPresent) {
+      infoPresent.quantity++;
+    } else {
+      newBasket.push({
+        title: info.title,
+        price: info.price,
+        id: info.id,
+        quantity: 1,
+      });
+    }
     setBasket(newBasket);
   };
 
@@ -23,6 +29,13 @@ const Sections = ({ data, basket, setBasket }) => {
                       <div
                         className="mealsText"
                         onClick={() => {
+                          // let isPresent = false;
+                          // for (let i = 0; i < basket.length; i++)
+                          //   if (basket[i].id === info.id) {
+                          //     isPresent = true;
+                          //     break;
+                          //   }
+
                           addBasketItem(info);
                         }}
                       >

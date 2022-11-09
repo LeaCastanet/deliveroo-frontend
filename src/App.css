@@ -105,19 +105,94 @@ h2 {
 
 .basketEtSections {
   display: flex;
-  max-width: 1200px;
   justify-content: center;
   margin: 0 auto;
   width: 96vw;
+  max-width: 1200px;
+  align-items: flex-start;
 }
 
 .basket {
-  background-color: aqua;
+  width: 350px;
+  background-color: white;
   flex: 1;
+  margin-top: 30px;
+  margin-left: 30px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgb(222, 222, 222);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.basket button {
+  background-color: #bac3c3;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #8b9a9b;
+  padding: 1rem;
+  margin: 10px;
+}
+
+.button {
+  color: #02cdbd;
+  border: #02cdbd solid 1px;
+  border-radius: 50%;
+  padding-inline: 6px;
+  margin: 0px 5px;
+}
+
+.ligneAchat {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 0;
+  margin: 0 10px;
+  justify-content: space-between;
+}
+
+.titlePrice {
+  display: flex;
+}
+
+.priceBasket {
+  margin-left: 20px;
+}
+
+.quantity {
+  margin-right: 20px;
+}
+
+.titleAchat {
+  overflow: hidden;
+  height: 2rem;
+}
+
+/* .blockLigneSousTotal {
+  border-top: 1px solid #d1d7d7;
+  border-bottom: 1px solid #d1d7d7;
+}
+
+.ligneSousTotal {
+  margin: 0 10px;
+  padding: 10px 0;
+} */
+
+/* .ligneFraisDePort {
+  margin: 0 10px;
+  padding: 10px 0;
+} */
+
+.ligneTotal {
+  margin: 0 10px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #d1d7d7;
 }
 
 .section {
-  max-width: 1200px;
   margin: 0 auto;
   margin-top: 20px;
   flex: 3;
